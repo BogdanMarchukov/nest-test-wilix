@@ -1,15 +1,15 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import {weatherDtoTypes} from "../Dto/weather.dto";
 
-export type WeatherDocument = Weather & Document;
+export type WeatherDocument = weatherDtoTypes & Document;
 
 @Schema()
 export class Weather {
     @Prop()
-    name: string;
+    temp: number
 
-    @Prop()
-    age: number;
+
 
 
 }
