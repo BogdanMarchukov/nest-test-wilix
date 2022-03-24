@@ -37,6 +37,10 @@ interface sysType {
     sunset: number
 }
 
+interface dataType {
+    data: weatherDtoTypes
+}
+
 export interface weatherDtoTypes {
     coord: coordTypes
     weather: weatherType[]
@@ -54,15 +58,15 @@ export interface weatherDtoTypes {
 }
 
 export class WeatherDto {
-    weatherData: weatherDtoTypes
+    weatherData: dataType
 
-    constructor(weatherData: weatherDtoTypes) {
+    constructor(weatherData: dataType) {
         this.weatherData = weatherData
     }
 
     getDto() {
         return {
-            temp: this.weatherData.main.temp
+            temp: this.weatherData.data.main.temp
         }
     }
 
